@@ -1,0 +1,32 @@
+# Opcional -- reconhecimento (STT) e síntese (TTS) de voz (ver voz/).
+
+# Síntese de voz offline (SAPI5 no Windows, NSSpeechSynthesizer no
+# macOS, espeak no Linux).
+pyttsx3>=2.90
+
+# Captura de áudio do microfone.
+sounddevice>=0.4.6
+numpy>=1.24
+
+# Reconhecimento de voz OFFLINE (recomendado). Baixe também um modelo
+# de idioma no site oficial do projeto Vosk e aponte o caminho ao
+# instanciar vosk.Model.
+vosk>=0.3.45
+
+# Alternativa offline mais pesada e mais precisa (Whisper).
+# faster-whisper>=1.0.0
+
+# Fallback ONLINE (usa a API gratuita de reconhecimento do Google) --
+# só é usado se nem vosk nem faster-whisper estiverem instalados.
+# SpeechRecognition>=3.10.0
+
+# Wake word ("Jarvis") de baixa latência (opcional -- requer conta e
+# chave de acesso gratuita no serviço Picovoice em console.picovoice.ai,
+# configurada em config.json -> voz.picovoice_access_key). Sem a chave
+# configurada (mesmo com a lib instalada), o Jarvis usa um fallback
+# simples baseado em transcrever e procurar a palavra no texto.
+# pvporcupine>=3.0.0
+
+# Redução de ruído no áudio gravado antes de transcrever (opcional --
+# sem ela, transcreve o áudio bruto normalmente).
+noisereduce>=3.0.0

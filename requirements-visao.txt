@@ -1,0 +1,28 @@
+# Opcional -- visão computacional (ver visao/).
+
+# Câmera, detecção facial (Haar cascade já incluso) e base para as
+# demais funções de visão.
+opencv-python>=4.9.0
+
+# OCR (leitura de texto em imagem). Também exige o binário do
+# Tesseract OCR instalado no sistema operacional (não vem pelo pip) --
+# no Windows, use o instalador oficial do projeto Tesseract e garanta
+# que fique no PATH.
+pytesseract>=0.3.10
+Pillow>=10.0.0
+
+# Detecção de objetos (YOLO). Baixa um checkpoint pequeno na primeira
+# execução real.
+ultralytics>=8.2.0
+
+# Detecção de mãos/gestos.
+mediapipe>=0.10.9
+
+# Captura/leitura/gravação de tela.
+mss>=9.0.1
+numpy>=1.24
+
+# Reconhecimento facial (identificar QUEM é o rosto, não só que há um
+# rosto). Mais pesado -- depende de dlib, que por sua vez pode exigir
+# um compilador C++ instalado.
+# face_recognition>=1.3.0

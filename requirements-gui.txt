@@ -1,0 +1,5 @@
+# Interface gráfica opcional do Jarvis (fundo preto + orbe "molécula"
+# animado + chat). Sem isso instalado, `python main.py` cai sozinho
+# para o modo texto no terminal -- ver main.py e gui/app.py.
+
+PySide6>=6.5

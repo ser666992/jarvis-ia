@@ -1,0 +1,18 @@
+# Opcional -- dispositivos externos (ver dispositivos/).
+
+# Bluetooth Low Energy.
+bleak>=0.22.0
+
+# Serial (Arduino, ESP32, microcontroladores em geral).
+pyserial>=3.5
+
+# MQTT (IoT / casa inteligente).
+paho-mqtt>=2.0.0
+
+# SSH (servidores, Raspberry Pi). Sem isto instalado, dispositivos/ssh_client.py
+# cai para o binário 'ssh' do sistema operacional (OpenSSH client),
+# que já cobre a maioria dos casos sem dependência pip nenhuma.
+paramiko>=3.4.0
+
+# Android via `adb` -- NÃO é um pacote pip: instale o Android SDK
+# Platform Tools separadamente e garanta que 'adb' fique no PATH.

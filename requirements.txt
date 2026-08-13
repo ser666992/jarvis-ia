@@ -1,0 +1,25 @@
+# O Jarvis roda sem NENHUMA dependência obrigatória -- todo o núcleo
+# (chat, memória, base de conhecimento, plugins, config, logs,
+# provedores de IA via urllib, backup, atualização, detecção de
+# hardware) usa só a biblioteca padrão do Python 3.8+.
+#
+# Cada módulo tem dependências OPCIONAIS que só destravam recursos
+# extras (voz, visão, automação avançada, dispositivos). Instale só o
+# que for usar:
+#
+#   pip install -r requirements-ia.txt             # modelo local (transformers/llama-cpp)
+#   pip install -r requirements-voz.txt             # reconhecimento e síntese de voz
+#   pip install -r requirements-visao.txt           # câmera, OCR, detecção de objetos/gestos
+#   pip install -r requirements-automacao.txt       # observar pastas, automação de teclado/mouse
+#   pip install -r requirements-dispositivos.txt    # BLE, serial, MQTT, SSH
+#   pip install -r requirements-sistema.txt         # CPU/RAM/processos, GPU
+#   pip install -r requirements-seguranca.txt       # criptografia real de segredos
+#   pip install -r requirements-nvidia.txt          # notas sobre o stack completo da NVIDIA
+#
+# Ou tudo de uma vez:
+#
+#   pip install -r requirements-full.txt
+#
+# psutil (usado por sistema/ e pelo plugin system_control) também está
+# listado em requirements-sistema.txt -- sem ele, essas funções avisam
+# educadamente e o resto do Jarvis funciona normal.

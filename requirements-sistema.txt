@@ -1,0 +1,9 @@
+# Opcional -- monitoramento e detecção de hardware (ver sistema/).
+
+# CPU/RAM/rede/bateria/processos/serviços.
+psutil>=5.9.0
+
+# Detecção de GPU NVIDIA sem depender de 'nvidia-smi' estar no PATH
+# (alternativa: instalar requirements-ia.txt, que já traz torch com
+# suporte a torch.cuda).
+# pynvml>=11.5.0

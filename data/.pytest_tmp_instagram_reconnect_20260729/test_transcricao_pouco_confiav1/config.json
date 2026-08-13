@@ -1,0 +1,234 @@
+{
+  "geral": {
+    "nome_assistente": "Neutron",
+    "idioma": "pt-BR",
+    "usuario_padrao": "default_user",
+    "intro_animada": true
+  },
+  "modulos": {
+    "ia": true,
+    "voz": true,
+    "visao": true,
+    "automacao": true,
+    "dispositivos": true,
+    "sistema": true,
+    "seguranca": true,
+    "logs": true,
+    "atualizacoes": true,
+    "visao_continua": true,
+    "controle_pc": true
+  },
+  "personalidade": {
+    "estilo": "padrao",
+    "voz_robotica": true,
+    "tom_voz_robotica": -4,
+    "efeito_ultron": false,
+    "efeito_neutron": true,
+    "intensidade_neutron": 0.42,
+    "intensidade_ultron": 0.7,
+    "mostrar_confianca": false,
+    "mostrar_provedor_ia": false,
+    "auto_melhoria": true,
+    "auto_melhoria_intervalo_horas": 4,
+    "aprender_tecnologia": true,
+    "aprender_tecnologia_intervalo_horas": 24,
+    "analisar_habitos": true,
+    "sonhos": true,
+    "sonhos_intervalo_horas": 2,
+    "assistencia_proativa": false,
+    "auto_consolidar": true,
+    "auto_consolidar_intervalo_horas": 3,
+    "modo_autonomo": false,
+    "modo_autonomo_ociosidade_minutos": 5
+  },
+  "ia": {
+    "perguntar_no_inicio": true,
+    "timeout_geracao_segundos": 600,
+    "ordem_provedores": [
+      "ollama",
+      "lm_studio",
+      "nvidia",
+      "openai",
+      "anthropic",
+      "gemini",
+      "mistral",
+      "openrouter",
+      "deepseek",
+      "openai_compatible",
+      "servidor_proprio"
+    ],
+    "modelo_local": {
+      "ativar": true,
+      "backend": "auto",
+      "nome_modelo": "",
+      "caminho_gguf": ""
+    },
+    "provedores": {
+      "openai": {
+        "api_key": "",
+        "modelo": "gpt-4o-mini"
+      },
+      "anthropic": {
+        "api_key": "",
+        "modelo": "claude-sonnet-5"
+      },
+      "gemini": {
+        "api_key": "",
+        "modelo": "gemini-2.0-flash"
+      },
+      "mistral": {
+        "api_key": "",
+        "modelo": "mistral-small-latest"
+      },
+      "openrouter": {
+        "api_key": "",
+        "modelo": "openrouter/auto"
+      },
+      "deepseek": {
+        "api_key": "",
+        "modelo": "deepseek-chat"
+      },
+      "nvidia": {
+        "api_key": "",
+        "modelo": "meta/llama-3.1-70b-instruct"
+      },
+      "ollama": {
+        "base_url": "http://localhost:11434",
+        "modelo": "llama3.1",
+        "api_key": ""
+      },
+      "lm_studio": {
+        "base_url": "http://localhost:1234/v1",
+        "modelo": "local-model",
+        "api_key": ""
+      },
+      "openai_compatible": {
+        "base_url": "",
+        "api_key": "",
+        "modelo": ""
+      },
+      "servidor_proprio": {
+        "base_url": "",
+        "api_key": "",
+        "modelo": "",
+        "auth_header": "Authorization"
+      }
+    }
+  },
+  "voz": {
+    "ativar_wakeword": true,
+    "palavra_chave": "neutron",
+    "palavras_chave": [],
+    "idioma": "pt-BR",
+    "motor_stt": "auto",
+    "motor_tts": "auto",
+    "modelo_stt_tamanho": "pequeno",
+    "microfone_index": null,
+    "cancelamento_ruido": true,
+    "picovoice_access_key": "",
+    "silencio_para_parar_segundos": 0.6,
+    "duracao_maxima_comando_segundos": 20.0,
+    "velocidade_fala": 205,
+    "microfone_calibrado": false,
+    "ruido_ambiente_calibrado": null,
+    "sensibilidade_barge_in": 2.8,
+    "barge_in_ativo": true,
+    "voz_tts_id": ""
+  },
+  "visao": {
+    "camera_index": 0,
+    "reconhecimento_facial": false,
+    "deteccao_objetos": false
+  },
+  "sistema": {
+    "monitorar_ao_iniciar": false,
+    "intervalo_monitor_segundos": 30,
+    "historico_maximo": 500,
+    "curiosidade": true,
+    "curiosidade_intervalo_minutos": 10,
+    "observador_internet": true,
+    "observador_internet_intervalo_horas": 12,
+    "observador_internet_notificar": false
+  },
+  "seguranca": {
+    "modo_administrador": false,
+    "exigir_confirmacao_acoes_destrutivas": true,
+    "backup_automatico": true,
+    "backup_intervalo_horas": 24,
+    "backup_max_arquivos": 10,
+    "backup_horario": "02:00"
+  },
+  "logs": {
+    "nivel": "INFO",
+    "arquivo_max_bytes": 1048576,
+    "arquivos_backup": 3
+  },
+  "automacao": {
+    "preferir_brave": true,
+    "sites": {
+      "youtube": "https://youtube.com",
+      "google": "https://google.com",
+      "github": "https://github.com",
+      "gmail": "https://mail.google.com"
+    }
+  },
+  "dispositivos": {
+    "adb_path": "adb",
+    "ssh_default_port": 22
+  },
+  "instagram": {
+    "envio_automatico": false,
+    "limite_envios_por_dia": 15,
+    "perfil_resposta": "casual",
+    "preferir_brave": false,
+    "usar_perfil_proprio": true,
+    "modo_conexao": "dedicado",
+    "cdp_port": 0
+  },
+  "privacidade": {
+    "modo_privado": false
+  },
+  "plugins": {
+    "desativados": []
+  },
+  "permissoes": {
+    "internet": true,
+    "controle_pc": true,
+    "instagram": true,
+    "dispositivos": true
+  },
+  "internet": {
+    "cache_minutos": 30
+  },
+  "gui": {
+    "comandos_rapidos": [
+      "diagnóstico completo",
+      "minhas mensagens do instagram",
+      "o que aconteceu hoje"
+    ]
+  },
+  "visao_continua": {
+    "ativa": false,
+    "intervalo_segundos": 3,
+    "limiar_mudanca": 12.0,
+    "manter_historico": 20
+  },
+  "escuta_ativa": {
+    "duracao_maxima_minutos": 30
+  },
+  "jogos": {
+    "duracao_maxima_demonstracao_minutos": 15.0,
+    "duracao_maxima_sessao_minutos": 20.0,
+    "taxa_quadros_por_segundo": 10,
+    "limiar_deteccao_reset": 40.0
+  },
+  "atualizacoes": {
+    "verificar_automaticamente": true,
+    "intervalo_horas": 24
+  },
+  "missoes": {
+    "executar_automaticamente": true,
+    "ociosidade_minutos": 3,
+    "intervalo_segundos": 60
+  }
+}

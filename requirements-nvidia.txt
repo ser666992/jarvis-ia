@@ -1,0 +1,32 @@
+# NVIDIA -- não é uma lista de "pip install", é um mapa do que cada
+# pedaço do pedido original precisa e onde ele vive neste projeto.
+#
+# O que JÁ funciona sem nada além do pip (cobertos em outros
+# requirements-*.txt deste projeto):
+#
+#   - Detecção de GPU NVIDIA (torch.cuda / pynvml / nvidia-smi)
+#         -> sistema/hardware.py            (requirements-sistema.txt / requirements-ia.txt)
+#   - Inferência local acelerada por CUDA via PyTorch/transformers
+#         -> ia/local_model.py              (requirements-ia.txt, com GPU NVIDIA + driver instalado)
+#   - NVIDIA NIM / NVIDIA API Catalog (endpoint HTTP compatível com a
+#     API da OpenAI -- não exige SDK nenhum, só uma NVIDIA_API_KEY)
+#         -> ia/providers/openai_compatible.py (nenhuma dependência extra)
+#
+# O que EXIGE instaladores oficiais da NVIDIA (fora do pip, com
+# hardware/driver compatível) e não é orquestrado automaticamente por
+# este projeto -- apenas detectado, quando presente, por
+# sistema.detect_nvidia_stack():
+#
+#   - CUDA Toolkit completo (nvcc)     -> instalador oficial da NVIDIA
+#   - cuDNN                            -> instalador oficial da NVIDIA (via pacote 'nvidia-cudnn-cuXX' ou manual)
+#   - TensorRT                         -> instalador oficial da NVIDIA (pacote 'tensorrt' requer setup próprio)
+#   - Triton Inference Server          -> imagem/container oficial da NVIDIA; cliente Python: 'tritonclient'
+#   - NeMo                             -> pacote 'nemo_toolkit', pesado, requer CUDA
+#   - Riva (STT/TTS acelerados)        -> SDK/container oficial da NVIDIA; cliente Python: 'nvidia-riva-client'
+#
+# Pontos de integração no código, se você instalar algum desses:
+#   - sistema/hardware.py:detect_nvidia_stack() já detecta a presença
+#     de cada um (import) e reporta em /modulos e /sistema.
+#   - Um cliente Triton/NeMo/Riva pode ser plugado como um novo
+#     provedor de IA (ia/base.py:AIProvider) e registrado via
+#     ia.manager.AIManager.register_provider(...), sem alterar o núcleo.

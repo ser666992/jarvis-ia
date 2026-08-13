@@ -1,0 +1,38 @@
+# Opcional -- automação (ver automacao/). O núcleo (abrir programas,
+# organizar/buscar/renomear/backup de arquivos, agendamento) já
+# funciona só com a stdlib. Isto aqui só melhora/expande.
+
+# Observação de pastas baseada em eventos do SO (mais eficiente que o
+# fallback de polling embutido).
+watchdog>=4.0.0
+
+# Mouse/teclado simulados -- usado por controle_pc/entrada.py
+# (controle_pc/, ver README próprio) e por plugins que quiserem ir além
+# do que automacao/apps.py já cobre.
+pyautogui>=0.9.54
+keyboard>=0.13.5
+mouse>=0.7.1
+pynput>=1.7.6
+
+# Captura de tela/região (alternativa ao mss, útil combinado com pyautogui).
+Pillow>=10.0.0
+
+# Controle de janelas de outros programas (minimizar/maximizar/focar
+# por título) -- ver automacao/janelas.py e controle_pc/janelas.py
+# (organizar em grade/cascata).
+pygetwindow>=0.0.9
+
+# UI Automation do Windows -- localizar botões/menus/caixas de diálogo
+# por nome acessível, em vez de precisar de coordenada de pixel fixa.
+# Usado por visao_continua/ (enumerar o que está na tela) e
+# controle_pc/elementos.py (localizar e clicar num elemento por texto).
+pywinauto>=0.6.9
+
+# Login automático em sites (automacao/logins_web.py): guarda a senha
+# no cofre seguro do próprio Windows (Credential Locker/DPAPI via
+# `keyring`), nunca em texto puro; usa o navegador de verdade
+# (Playwright) pra preencher o formulário de login. Depois de instalar,
+# rode também `python -m playwright install chromium` uma vez, pra
+# baixar o navegador que o Playwright controla.
+keyring>=24.0.0
+playwright>=1.40.0

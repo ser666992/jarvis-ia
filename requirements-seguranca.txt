@@ -1,0 +1,9 @@
+# Opcional -- criptografia real de segredos (ver seguranca/crypto.py) E
+# do conteúdo de página capturado pelo RedCore (ver
+# automacao/redcore_historico.py, incluindo e-mails). Sem isto, o
+# Jarvis ainda funciona (autenticação PIN/senha via hashlib da stdlib
+# continua real), mas a "criptografia" de segredos salvos (ex.: API
+# keys) e do histórico do RedCore cai para uma ofuscação base64
+# reversível -- NÃO é proteção de verdade. Instale isto para ter Fernet
+# (AES) real nos dois casos.
+cryptography>=42.0.0

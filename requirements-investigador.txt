@@ -1,0 +1,18 @@
+# Opcional -- "Investigador Universal" (ver investigador/, plugins/investigador.py).
+# Sem nenhuma dessas instaladas, a análise ainda funciona (extensão,
+# tamanho, estrutura de zip/APK, strings legíveis em EXE, cabeçalhos
+# HTTP de site) -- essas libs só destravam detalhes extras.
+
+# Cabeçalho PE de .exe/.dll: arquitetura, DLLs importadas.
+pefile>=2023.2.7
+
+# Metadados de PDF (producer/creator/nº de páginas).
+pypdf>=4.0.0
+
+# EXIF de imagem (câmera, software, GPS) -- já é dependência opcional
+# de requirements-visao.txt; repetido aqui só pra documentar o uso.
+Pillow>=10.0.0
+
+# Metadados de vídeo (codec/resolução/duração): requer o binário
+# 'ffprobe' (parte do ffmpeg) no PATH -- não é um pacote Python, nada
+# pra instalar via pip aqui.

@@ -1,0 +1,12 @@
+# Dependências só de DESENVOLVIMENTO (nunca necessárias pra rodar o
+# Jarvis normalmente) -- rodar a suíte de testes em tests/.
+#
+#   pip install -r requirements-dev.txt
+#   pytest
+pytest>=8.0.0
+# Usado diretamente pelos testes de voz, OCR e jogos. Sem esta linha a
+# suíte falha ainda durante a coleta, antes de executar qualquer teste.
+numpy>=1.26.0
+# `tests/test_jogos_modelo.py` exercita a rede neural real e importa
+# torch diretamente durante a coleta.
+torch>=2.2.0

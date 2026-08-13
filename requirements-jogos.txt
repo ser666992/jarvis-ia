@@ -1,0 +1,12 @@
+# Opcional -- necessário só pra RODAR jogos gerados por "cria um jogo
+# que..." (ver core/skill_forge.py, plugins/skill_forge.py). Gerar e
+# revisar o código não precisa disso -- só rodar de verdade
+# ("roda o programa <nome>, confirmo").
+pygame>=2.5.0
+
+# Só necessário se você pedir um jogo em 3D ("cria um jogo em 3d
+# sobre..."). Engine 3D simples baseada em Panda3D -- instala vários
+# pacotes (maior download que pygame). Sem isso instalado, jogos em 3D
+# gerados vão falhar ao rodar com ModuleNotFoundError -- gerar/revisar
+# o código continua funcionando normalmente sem essa dependência.
+ursina>=6.1.2

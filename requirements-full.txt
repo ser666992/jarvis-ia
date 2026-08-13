@@ -1,0 +1,11 @@
+# Instala TODAS as dependências opcionais de todos os módulos de uma
+# vez (bastante coisa -- inclui torch, opencv, mediapipe, ultralytics
+# etc.). Normalmente é melhor instalar só o requirements-<modulo>.txt
+# do que você vai usar de fato.
+-r requirements-ia.txt
+-r requirements-voz.txt
+-r requirements-visao.txt
+-r requirements-automacao.txt
+-r requirements-dispositivos.txt
+-r requirements-sistema.txt
+-r requirements-seguranca.txt

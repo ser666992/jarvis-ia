@@ -1,0 +1,16 @@
+# Opcional -- todos os provedores de IA via API (OpenAI, Anthropic,
+# Gemini, Mistral, OpenRouter, DeepSeek, NVIDIA, Ollama, LM Studio,
+# etc.) já funcionam SEM nenhuma destas libs, via urllib da stdlib
+# (ver ia/http_utils.py). Instale o que estiver abaixo só se quiser
+# rodar um modelo de linguagem localmente, dentro do próprio processo
+# do Jarvis (ia/local_model.py), em vez de falar com um servidor.
+
+# Backend baseado em transformers (Hugging Face) -- roda em GPU
+# automaticamente se houver CUDA disponível (ver requirements-sistema.txt).
+transformers>=4.40.0
+torch>=2.2.0
+
+# Backend alternativo, mais leve, para modelos .gguf (llama.cpp) --
+# não precisa de torch. Requer apontar ia.modelo_local.caminho_gguf
+# no config.
+# llama-cpp-python>=0.2.60
